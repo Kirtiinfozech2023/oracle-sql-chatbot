@@ -1,16 +1,17 @@
 import oracledb
-import os
-from dotenv import load_dotenv
+import streamlit as st
+#import os
+#from dotenv import load_dotenv
 import pandas as pd
 # Load environment variables
-load_dotenv()
+#load_dotenv()
 
 # Read values
-ORACLE_USER = os.getenv("ORACLE_USER")
-ORACLE_PASSWORD = os.getenv("ORACLE_PASSWORD")
-ORACLE_HOST = os.getenv("ORACLE_HOST")
-ORACLE_PORT = os.getenv("ORACLE_PORT")
-ORACLE_SID = os.getenv("ORACLE_SID")
+ORACLE_USER = st.secrets["ORACLE_USER"]
+ORACLE_PASSWORD = st.secrets["ORACLE_PASSWORD"]
+ORACLE_HOST = st.secrets["ORACLE_HOST"]
+ORACLE_PORT = st.secrets["ORACLE_PORT"]
+ORACLE_SID = st.secrets["ORACLE_SID"]
 
 # Build DSN
 ORACLE_DSN = oracledb.makedsn(ORACLE_HOST, ORACLE_PORT, sid=ORACLE_SID)
