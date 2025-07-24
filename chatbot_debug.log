@@ -1,0 +1,981 @@
+2025-07-08 11:58:10,035 INFO Classify Intent: hi
+2025-07-08 11:58:12,126 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 11:59:01,031 INFO Classify Intent: show unique site ids
+2025-07-08 11:59:01,957 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 11:59:01,959 INFO Generating SQL for user query: show unique site ids
+2025-07-08 11:59:03,004 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 11:59:06,118 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:03:57,557 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:04:32,567 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:14:29,847 INFO Classifying intent for user input: I want to see the arrear invoices
+2025-07-08 12:14:32,156 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:14:32,164 INFO Intent classified as: sql_query
+2025-07-08 12:14:32,164 INFO Generating SQL for input: I want to see the arrear invoices
+2025-07-08 12:14:33,385 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:14:33,385 INFO Generated SQL: SELECT * FROM TXN_SITE_INVOICE_DETAILS WHERE TRANSACTION_STATUS = 'Arrear'
+2025-07-08 12:16:17,764 INFO Classifying intent for user input: I want to see the distinct expired sites
+2025-07-08 12:16:18,861 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:16:18,862 INFO Intent classified as: sql_query
+2025-07-08 12:16:18,863 INFO Generating SQL for input: I want to see the distinct expired sites
+2025-07-08 12:16:20,190 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:16:20,191 INFO Generated SQL: SELECT DISTINCT SITE_NAME
+FROM TXN_SITE_INVOICE_DETAILS
+WHERE SITE_STATUS = 'Expired';
+2025-07-08 12:17:18,475 INFO Classifying intent for user input: I want to see the  lease expired sites
+2025-07-08 12:17:19,368 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:17:19,368 INFO Intent classified as: sql_query
+2025-07-08 12:17:19,382 INFO Generating SQL for input: I want to see the  lease expired sites
+2025-07-08 12:17:21,222 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:17:21,223 INFO Generated SQL: SELECT DISTINCT t1.SITE_NAME, t1.SITE_STATUS
+FROM TXN_SITE_INVOICE_DETAILS t1
+JOIN TXN_SITE_DETAILS t2 ON t1.SITERRA_SITE_ID = t2.SITERRA_SITE_ID
+WHERE t1.ORIGINAL_EXPIRATION_DATE < SYSDATE;
+2025-07-08 12:17:23,157 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:03,616 INFO Classifying intent for user input: I want to see the  lease expired sites
+2025-07-08 12:18:04,640 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:04,646 INFO Intent classified as: sql_query
+2025-07-08 12:18:04,646 INFO Generating SQL for input: I want to see the  lease expired sites
+2025-07-08 12:18:05,684 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:05,684 INFO Generated SQL: SELECT SITE_NAME, SITE_STATUS, ORIGINAL_EXPIRATION_DATE
+FROM TXN_SITE_INVOICE_DETAILS
+WHERE ORIGINAL_EXPIRATION_DATE < SYSDATE;
+2025-07-08 12:18:07,697 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:37,637 INFO Classifying intent for user input: I want to see the  lease expired sites
+2025-07-08 12:18:38,547 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:38,547 INFO Intent classified as: sql_query
+2025-07-08 12:18:38,547 INFO Generating SQL for input: I want to see the  lease expired sites
+2025-07-08 12:18:40,158 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:40,158 INFO Generated SQL: SELECT SITE_NAME, SITE_STATUS, ORIGINAL_EXPIRATION_DATE 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE ORIGINAL_EXPIRATION_DATE < SYSDATE;
+2025-07-08 12:18:42,215 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:48,420 INFO Classifying intent for user input: I want to see the  lease expired sites
+2025-07-08 12:18:49,277 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:49,277 INFO Intent classified as: sql_query
+2025-07-08 12:18:49,277 INFO Generating SQL for input: I want to see the  lease expired sites
+2025-07-08 12:18:49,931 INFO Classifying intent for user input: I want to see the  lease expired sites
+2025-07-08 12:18:50,810 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:50,810 INFO Generated SQL: SELECT invoice_id, SITE_NAME, SITE_STATUS, ORIGINAL_EXPIRATION_DATE
+FROM TXN_SITE_INVOICE_DETAILS
+WHERE ORIGINAL_EXPIRATION_DATE < SYSDATE;
+2025-07-08 12:18:50,890 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:50,890 INFO Intent classified as: sql_query
+2025-07-08 12:18:50,890 INFO Generating SQL for input: I want to see the  lease expired sites
+2025-07-08 12:18:52,243 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:52,243 INFO Generated SQL: SELECT DISTINCT SITE_NAME, SITE_STATUS
+FROM TXN_SITE_INVOICE_DETAILS
+WHERE ORIGINAL_EXPIRATION_DATE < SYSDATE;
+2025-07-08 12:18:54,199 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:56,278 INFO Classifying intent for user input: I want to see the  lease expired sites
+2025-07-08 12:18:56,957 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:56,957 INFO Intent classified as: sql_query
+2025-07-08 12:18:56,957 INFO Generating SQL for input: I want to see the  lease expired sites
+2025-07-08 12:18:59,411 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:18:59,411 INFO Generated SQL: SELECT DISTINCT t1.SITE_NAME, t1.SITE_STATUS
+FROM TXN_SITE_INVOICE_DETAILS t1
+JOIN TXN_SITE_DETAILS t2 ON t1.SITERRA_SITE_ID = t2.SITERRA_SITE_ID
+WHERE t1.ORIGINAL_EXPIRATION_DATE < SYSDATE;
+2025-07-08 12:19:01,268 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:20:15,916 INFO Classifying intent for user input: I want to see the camparison of Apr-25 and May-25 month invoices
+2025-07-08 12:20:16,596 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:20:16,596 INFO Intent classified as: sql_query
+2025-07-08 12:20:16,596 INFO Generating SQL for input: I want to see the camparison of Apr-25 and May-25 month invoices
+2025-07-08 12:20:17,666 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:20:17,666 INFO Generated SQL: SELECT *
+FROM TXN_SITE_INVOICE_DETAILS
+WHERE search_month IN ('Apr-25', 'May-25');
+2025-07-08 12:20:36,190 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:21:10,696 INFO Classifying intent for user input: I want to see Apr-25 and May-25 month invoices
+2025-07-08 12:21:11,416 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:21:11,416 INFO Intent classified as: sql_query
+2025-07-08 12:21:11,416 INFO Generating SQL for input: I want to see Apr-25 and May-25 month invoices
+2025-07-08 12:21:12,744 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:21:12,744 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE search_month IN ('Apr-25', 'May-25')
+2025-07-08 12:21:25,418 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:21:54,233 INFO Classifying intent for user input: I want to see visualization of  Apr-25 and May-25 month invoices
+2025-07-08 12:21:55,344 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:21:55,344 INFO Intent classified as: sql_query
+2025-07-08 12:21:55,344 INFO Generating SQL for input: I want to see visualization of  Apr-25 and May-25 month invoices
+2025-07-08 12:21:56,570 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:21:56,580 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE search_month IN ('Apr-25', 'May-25')
+2025-07-08 12:22:06,353 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:22:32,670 INFO Classifying intent for user input: show total number of records
+2025-07-08 12:22:33,484 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:22:33,484 INFO Intent classified as: sql_query
+2025-07-08 12:22:33,484 INFO Generating SQL for input: show total number of records
+2025-07-08 12:22:34,360 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:22:34,360 INFO Generated SQL: SELECT COUNT(*) FROM TXN_SITE_INVOICE_DETAILS
+2025-07-08 12:22:37,122 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:24:26,019 INFO Classifying intent for user input: I want to see the camparison of 01-04-25 and 01-05-25 month invoices
+2025-07-08 12:24:26,798 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:24:26,799 INFO Intent classified as: sql_query
+2025-07-08 12:24:26,800 INFO Generating SQL for input: I want to see the camparison of 01-04-25 and 01-05-25 month invoices
+2025-07-08 12:24:28,229 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:24:28,229 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE search_month IN (TO_DATE('01-04-25', 'DD-MM-YY'), TO_DATE('01-05-25', 'DD-MM-YY'))
+2025-07-08 12:34:04,343 INFO Classifying intent for user input: hi,show me total records
+2025-07-08 12:34:05,346 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:34:05,346 INFO Intent classified as: sql_query
+2025-07-08 12:34:05,346 INFO Generating SQL for input: hi,show me total records
+2025-07-08 12:34:08,115 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:34:08,115 INFO Generated SQL: SELECT COUNT(*) FROM TXN_SITE_INVOICE_DETAILS
+2025-07-08 12:34:10,979 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:44:33,680 INFO Classifying intent for user input: i want to see count of active and canceled sites
+2025-07-08 12:44:34,440 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:44:34,440 INFO Intent classified as: sql_query
+2025-07-08 12:44:34,440 INFO Generating SQL for input: i want to see count of active and canceled sites
+2025-07-08 12:44:36,288 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:44:36,288 INFO Generated SQL: SELECT 
+    COUNT(CASE WHEN SITE_STATUS = 'Active' THEN 1 END) AS active_sites,
+    COUNT(CASE WHEN SITE_STATUS = 'Canceled' THEN 1 END) AS canceled_sites
+FROM 
+    TXN_SITE_DETAILS;
+2025-07-08 12:44:39,869 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:45:02,504 INFO Classifying intent for user input: i want to see count of active and canceled sites present in main table
+2025-07-08 12:45:03,206 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:45:03,206 INFO Intent classified as: sql_query
+2025-07-08 12:45:03,206 INFO Generating SQL for input: i want to see count of active and canceled sites present in main table
+2025-07-08 12:45:05,261 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:45:05,261 INFO Generated SQL: SELECT 
+    SUM(CASE WHEN SITE_STATUS = 'Active' THEN 1 ELSE 0 END) AS active_sites_count,
+    SUM(CASE WHEN SITE_STATUS = 'Canceled' THEN 1 ELSE 0 END) AS canceled_sites_count
+FROM 
+    TXN_SITE_INVOICE_DETAILS;
+2025-07-08 12:45:07,124 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:00,424 INFO Classifying intent for user input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:01,168 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:01,183 INFO Intent classified as: sql_query
+2025-07-08 12:46:01,183 INFO Generating SQL for input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:03,835 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:03,843 INFO Generated SQL: SELECT 
+    a.search_month AS month_1, 
+    b.search_month AS month_2, 
+    COUNT(a.invoice_id) AS count_month_1, 
+    COUNT(b.invoice_id) AS count_month_2
+FROM 
+    TXN_SITE_INVOICE_DETAILS a
+JOIN 
+    TXN_SITE_INVOICE_DETAILS b 
+ON 
+    a.siterra_site_id = b.siterra_site_id 
+    AND a.search_month = b.search_month - 1
+GROUP BY 
+    a.search_month, b.search_month;
+2025-07-08 12:46:23,196 INFO Classifying intent for user input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:24,039 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:24,040 INFO Intent classified as: sql_query
+2025-07-08 12:46:24,040 INFO Generating SQL for input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:27,695 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:27,703 INFO Generated SQL: SELECT 
+    t1.search_month AS current_month,
+    t2.search_month AS previous_month,
+    COUNT(t1.invoice_id) AS current_month_count,
+    COUNT(t2.invoice_id) AS previous_month_count
+FROM 
+    TXN_SITE_INVOICE_DETAILS t1
+LEFT JOIN 
+    TXN_SITE_INVOICE_DETAILS t2 
+ON 
+    t1.siterra_site_id = t2.siterra_site_id 
+    AND t1.search_month = ADD_MONTHS(t2.search_month, 1)
+GROUP BY 
+    t1.search_month, t2.search_month
+ORDER BY 
+    t1.search_month DESC;
+2025-07-08 12:46:31,022 INFO Classifying intent for user input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:31,897 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:31,897 INFO Intent classified as: sql_query
+2025-07-08 12:46:31,897 INFO Generating SQL for input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:32,338 INFO Classifying intent for user input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:33,219 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:33,219 INFO Intent classified as: sql_query
+2025-07-08 12:46:33,219 INFO Generating SQL for input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-08 12:46:34,861 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:34,861 INFO Generated SQL: SELECT 
+    t1.search_month AS current_month,
+    t2.search_month AS previous_month,
+    COUNT(t1.invoice_id) AS current_month_count,
+    COUNT(t2.invoice_id) AS previous_month_count
+FROM 
+    TXN_SITE_INVOICE_DETAILS t1
+LEFT JOIN 
+    TXN_SITE_INVOICE_DETAILS t2 
+ON 
+    t1.siterra_site_id = t2.siterra_site_id 
+    AND t1.search_month = ADD_MONTHS(t2.search_month, 1)
+GROUP BY 
+    t1.search_month, t2.search_month
+ORDER BY 
+    t1.search_month DESC;
+2025-07-08 12:46:36,100 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:46:36,102 INFO Generated SQL: SELECT 
+    t1.BILL_MONTH AS current_month,
+    t2.BILL_MONTH AS previous_month,
+    COUNT(t1.invoice_id) AS current_month_count,
+    COUNT(t2.invoice_id) AS previous_month_count
+FROM 
+    TXN_SITE_INVOICE_DETAILS t1
+LEFT JOIN 
+    TXN_SITE_INVOICE_DETAILS t2 ON t1.BILL_MONTH = ADD_MONTHS(t2.BILL_MONTH, 1)
+GROUP BY 
+    t1.BILL_MONTH, t2.BILL_MONTH
+ORDER BY 
+    t1.BILL_MONTH DESC;
+2025-07-08 12:46:44,907 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:48:40,043 INFO Classifying intent for user input: i want to see total amount of each invoice
+2025-07-08 12:48:41,369 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:48:41,369 INFO Intent classified as: sql_query
+2025-07-08 12:48:41,369 INFO Generating SQL for input: i want to see total amount of each invoice
+2025-07-08 12:48:42,446 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:48:42,446 INFO Generated SQL: SELECT invoice_id, SUM(ADDITIONAL_RATE) AS total_amount
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY invoice_id
+2025-07-08 12:48:45,216 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:56:59,362 INFO Classifying intent for user input: i want to see total amount of each invoice
+2025-07-08 12:57:00,239 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:57:00,239 INFO Intent classified as: sql_query
+2025-07-08 12:57:00,239 INFO Generating SQL for input: i want to see total amount of each invoice
+2025-07-08 12:57:01,436 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 12:57:01,436 INFO Generated SQL: SELECT invoice_id, SUM(ADDITIONAL_RATE) AS total_amount
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY invoice_id
+2025-07-08 12:57:04,336 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:05:09,853 INFO Classifying intent for user input: i want to compare two consecutive month invoice on the basis of their count  
+2025-07-08 13:05:10,513 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:05:10,513 INFO Intent classified as: sql_query
+2025-07-08 13:05:10,513 INFO Generating SQL for input: i want to compare two consecutive month invoice on the basis of their count  
+2025-07-08 13:05:13,633 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:05:13,633 INFO Generated SQL: SELECT 
+    t1.BILL_MONTH AS Current_Month,
+    t2.BILL_MONTH AS Previous_Month,
+    COUNT(t1.invoice_id) AS Current_Month_Count,
+    COUNT(t2.invoice_id) AS Previous_Month_Count
+FROM 
+    TXN_SITE_INVOICE_DETAILS t1
+LEFT JOIN 
+    TXN_SITE_INVOICE_DETAILS t2 
+ON 
+    t1.siterra_site_id = t2.siterra_site_id 
+    AND t1.BILL_MONTH = ADD_MONTHS(t2.BILL_MONTH, 1)
+GROUP BY 
+    t1.BILL_MONTH, t2.BILL_MONTH
+ORDER BY 
+    t1.BILL_MONTH DESC;
+2025-07-08 13:05:17,796 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:38:16,027 INFO Classifying intent for user input: hi
+2025-07-08 13:38:17,433 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:38:17,435 INFO Intent classified as: greeting
+2025-07-08 13:38:45,995 INFO Classifying intent for user input: show count of each invoices
+2025-07-08 13:38:47,741 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:38:47,741 INFO Intent classified as: sql_query
+2025-07-08 13:38:47,741 INFO Generating SQL for input: show count of each invoices
+2025-07-08 13:38:49,181 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:38:49,475 INFO Generated SQL: SELECT COUNT(invoice_id) FROM TXN_SITE_INVOICE_DETAILS;
+2025-07-08 13:38:52,471 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:39:11,219 INFO Classifying intent for user input: show month wise invoice count
+2025-07-08 13:39:11,924 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:39:11,927 INFO Intent classified as: sql_query
+2025-07-08 13:39:11,927 INFO Generating SQL for input: show month wise invoice count
+2025-07-08 13:39:13,853 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:39:13,853 INFO Generated SQL: SELECT BILL_MONTH, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY BILL_MONTH
+2025-07-08 13:39:16,711 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:39:52,742 INFO Classifying intent for user input: show month wise invoice count and amount
+2025-07-08 13:39:53,895 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:39:53,896 INFO Intent classified as: sql_query
+2025-07-08 13:39:53,896 INFO Generating SQL for input: show month wise invoice count and amount
+2025-07-08 13:39:55,417 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:39:55,431 INFO Generated SQL: SELECT search_month, COUNT(invoice_id) AS invoice_count, SUM(ADDITIONAL_RATE) AS total_amount
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY search_month
+2025-07-08 13:39:58,368 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:41:10,088 INFO Classifying intent for user input: show month wise invoice count and amount for each country
+2025-07-08 13:41:10,893 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:41:10,893 INFO Intent classified as: sql_query
+2025-07-08 13:41:10,893 INFO Generating SQL for input: show month wise invoice count and amount for each country
+2025-07-08 13:41:12,301 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:41:12,301 INFO Generated SQL: SELECT search_month, country_id, COUNT(invoice_id) AS invoice_count, SUM(ADDITIONAL_RATE) AS total_amount
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY search_month, country_id;
+2025-07-08 13:41:15,092 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:46:01,240 INFO Classifying intent for user input: show country id ,customer name ,invoice amount based on country,monthwise,customerwise
+2025-07-08 13:46:02,370 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:46:02,370 INFO Intent classified as: sql_query
+2025-07-08 13:46:02,370 INFO Generating SQL for input: show country id ,customer name ,invoice amount based on country,monthwise,customerwise
+2025-07-08 13:46:03,488 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:46:03,488 INFO Generated SQL: SELECT country_id, CUSTOMER_NAME, SUM(ADDITIONAL_RATE) AS invoice_amount
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY country_id, BILL_MONTH, CUSTOMER_NAME
+2025-07-08 13:46:06,847 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:46:47,681 INFO Classifying intent for user input: show country name ,customer name ,invoice amount based on country,monthwise,customerwise
+2025-07-08 13:46:48,524 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:46:48,529 INFO Intent classified as: sql_query
+2025-07-08 13:46:48,529 INFO Generating SQL for input: show country name ,customer name ,invoice amount based on country,monthwise,customerwise
+2025-07-08 13:46:50,676 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:46:50,676 INFO Generated SQL: SELECT t.country_id, t.CUSTOMER_NAME, SUM(t.ADDITIONAL_RATE) AS invoice_amount
+FROM TXN_SITE_INVOICE_DETAILS t
+GROUP BY t.country_id, t.BILL_MONTH, t.CUSTOMER_NAME
+2025-07-08 13:46:54,663 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 11:43:57,453 INFO Classifying intent for user input: show me the invoices of feb-25,mar-25
+2025-07-09 11:44:05,687 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 11:44:05,697 INFO Intent classified as: sql_query
+2025-07-09 11:44:05,697 INFO Generating SQL for input: show me the invoices of feb-25,mar-25
+2025-07-09 11:44:07,227 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 11:44:07,227 INFO Generated SQL: SELECT * FROM TXN_SITE_INVOICE_DETAILS WHERE search_month IN ('2025-02', '2025-03')
+2025-07-09 11:47:48,355 INFO Classifying intent for user input: show me the invoices of feb-25,mar-25
+2025-07-09 11:47:49,744 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 11:47:49,744 INFO Intent classified as: sql_query
+2025-07-09 11:47:49,744 INFO Generating SQL for input: show me the invoices of feb-25,mar-25
+2025-07-09 11:47:52,399 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 11:47:52,399 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE search_month IN ('FEB-25', 'MAR-25')
+2025-07-09 11:48:34,912 INFO Classifying intent for user input: hi
+2025-07-09 11:48:35,724 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 11:48:35,724 INFO Intent classified as: greeting
+2025-07-09 14:04:57,972 INFO Classifying intent for user input: hi
+2025-07-09 14:04:58,946 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 14:04:58,946 INFO Intent classified as: greeting
+2025-07-09 14:05:00,820 INFO Classifying intent for user input: hi
+2025-07-09 14:05:02,199 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 14:05:02,216 INFO Intent classified as: greeting
+2025-07-09 14:05:03,904 INFO Classifying intent for user input: hi
+2025-07-09 14:05:05,651 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 14:05:05,655 INFO Intent classified as: greeting
+2025-07-09 14:05:49,857 INFO Classifying intent for user input: hi
+2025-07-09 14:05:51,319 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-09 14:05:51,319 INFO Intent classified as: greeting
+2025-07-15 11:56:36,393 INFO Classifying intent for user input: hi
+2025-07-15 11:56:44,271 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:56:44,284 INFO Intent classified as: greeting
+2025-07-15 11:57:11,797 INFO Classifying intent for user input: show the count of  feb-25  invoice
+2025-07-15 11:57:12,946 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:12,946 INFO Intent classified as: sql_query
+2025-07-15 11:57:12,946 INFO Generating SQL for input: show the count of  feb-25  invoice
+2025-07-15 11:57:13,069 INFO Classifying intent for user input: show the count of  feb-25  invoice
+2025-07-15 11:57:14,165 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:14,165 INFO Intent classified as: sql_query
+2025-07-15 11:57:14,165 INFO Generating SQL for input: show the count of  feb-25  invoice
+2025-07-15 11:57:14,780 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:14,780 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE TO_CHAR(invoice_start_date, 'MON-YY') = 'FEB-25';
+2025-07-15 11:57:15,803 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:15,816 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE TO_CHAR(invoice_start_date, 'MON-YY') = 'FEB-25';
+2025-07-15 11:57:19,594 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:26,508 INFO Classifying intent for user input: show the count of  feb-25  invoice
+2025-07-15 11:57:27,892 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:27,892 INFO Intent classified as: sql_query
+2025-07-15 11:57:27,892 INFO Generating SQL for input: show the count of  feb-25  invoice
+2025-07-15 11:57:29,431 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:57:29,431 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE TO_CHAR(invoice_start_date, 'YYYY-MM') = '2025-02';
+2025-07-15 11:57:32,198 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:01,005 INFO Classifying intent for user input: i want to see count of active and canceled sites of tenancy data
+2025-07-15 11:58:01,814 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:01,816 INFO Intent classified as: sql_query
+2025-07-15 11:58:01,816 INFO Generating SQL for input: i want to see count of active and canceled sites of tenancy data
+2025-07-15 11:58:03,629 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:03,629 INFO Generated SQL: SELECT 
+    SUM(CASE WHEN t.TRANSACTION_STATUS = 'ACTIVE' THEN 1 ELSE 0 END) AS active_sites_count,
+    SUM(CASE WHEN t.TRANSACTION_STATUS = 'CANCELLED' THEN 1 ELSE 0 END) AS cancelled_sites_count
+FROM 
+    TXN_TENANCY_DETAILS t;
+2025-07-15 11:58:05,886 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:37,523 INFO Classifying intent for user input: i want to see count lease status wise
+2025-07-15 11:58:39,483 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:39,484 INFO Intent classified as: sql_query
+2025-07-15 11:58:39,484 INFO Generating SQL for input: i want to see count lease status wise
+2025-07-15 11:58:40,704 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:40,704 INFO Generated SQL: SELECT LEASESTATUS, COUNT(*) 
+FROM TXN_TENANCY_DETAILS 
+GROUP BY LEASESTATUS
+2025-07-15 11:58:43,350 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:55,718 INFO Classifying intent for user input: i want to see count lease status wise
+2025-07-15 11:58:56,476 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:56,476 INFO Intent classified as: sql_query
+2025-07-15 11:58:56,476 INFO Generating SQL for input: i want to see count lease status wise
+2025-07-15 11:58:58,008 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:58:58,008 INFO Generated SQL: SELECT LEASESTATUS, COUNT(*) AS lease_count
+FROM TXN_TENANCY_DETAILS
+GROUP BY LEASESTATUS;
+2025-07-15 11:59:00,869 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:59:20,666 INFO Classifying intent for user input: i want to generate sql queries
+2025-07-15 11:59:28,110 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:59:28,110 INFO Intent classified as: sql_query
+2025-07-15 11:59:28,110 INFO Generating SQL for input: i want to generate sql queries
+2025-07-15 11:59:29,028 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 11:59:29,028 INFO Generated SQL: SELECT * FROM TXN_SITE_INVOICE_DETAILS;
+2025-07-15 11:59:38,863 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:00:24,346 INFO Classifying intent for user input: can i see the unique search month present in main table
+2025-07-15 12:00:25,456 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:00:25,456 INFO Intent classified as: sql_query
+2025-07-15 12:00:25,456 INFO Generating SQL for input: can i see the unique search month present in main table
+2025-07-15 12:00:26,270 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:00:26,270 INFO Generated SQL: SELECT DISTINCT search_month FROM TXN_SITE_INVOICE_DETAILS;
+2025-07-15 12:00:29,245 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:00:51,158 INFO Classifying intent for user input: show unique invoice ids with there sum of amounts
+2025-07-15 12:00:51,932 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:00:51,938 INFO Intent classified as: sql_query
+2025-07-15 12:00:51,938 INFO Generating SQL for input: show unique invoice ids with there sum of amounts
+2025-07-15 12:00:53,001 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:00:53,001 INFO Generated SQL: SELECT invoice_id, SUM(ADDITIONAL_RATE) AS total_amount
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY invoice_id;
+2025-07-15 12:00:55,871 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:03:10,370 INFO Classifying intent for user input: get the details of cancelled sites
+2025-07-15 12:03:11,148 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:03:11,148 INFO Intent classified as: sql_query
+2025-07-15 12:03:11,148 INFO Generating SQL for input: get the details of cancelled sites
+2025-07-15 12:03:12,319 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:03:12,319 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE TRANSACTION_STATUS = 'CANCELLED';
+2025-07-15 12:04:06,665 INFO Classifying intent for user input: get the details of lease status of cancelled sites
+2025-07-15 12:04:07,258 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:04:07,267 INFO Intent classified as: sql_query
+2025-07-15 12:04:07,267 INFO Generating SQL for input: get the details of lease status of cancelled sites
+2025-07-15 12:04:09,422 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:04:09,424 INFO Generated SQL: SELECT tsd.SITE_NAME, tsd.SITE_STATUS, ttd.LEASESTATUS
+FROM TXN_SITE_DETAILS tsd
+JOIN TXN_TENANCY_DETAILS ttd ON tsd.SITERRA_SITE_ID = ttd.SITERRA_TENANCY_ID AND tsd.COUNTRY_ID = ttd.COUNTRY_ID
+WHERE tsd.SITE_STATUS = 'Cancelled';
+2025-07-15 12:10:19,406 INFO Classifying intent for user input: get the details of sites whose site status is on air
+2025-07-15 12:10:20,134 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:10:20,134 INFO Intent classified as: sql_query
+2025-07-15 12:10:20,134 INFO Generating SQL for input: get the details of sites whose site status is on air
+2025-07-15 12:10:21,259 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:10:21,259 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'ON AIR';
+2025-07-15 12:11:45,295 INFO Classifying intent for user input: get the details of sites whose site status is on air
+2025-07-15 12:11:46,316 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:11:46,319 INFO Intent classified as: sql_query
+2025-07-15 12:11:46,319 INFO Generating SQL for input: get the details of sites whose site status is on air
+2025-07-15 12:11:47,169 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:11:47,178 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'ON AIR';
+2025-07-15 12:11:48,513 INFO Classifying intent for user input: get the details of sites whose site status is on air
+2025-07-15 12:11:49,204 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:11:49,204 INFO Intent classified as: sql_query
+2025-07-15 12:11:49,209 INFO Generating SQL for input: get the details of sites whose site status is on air
+2025-07-15 12:11:50,142 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:11:50,142 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'ON AIR'
+2025-07-15 12:26:09,468 INFO Classifying intent for user input: get the details of sites whose site status is on air
+2025-07-15 12:26:10,323 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:26:10,323 INFO Intent classified as: sql_query
+2025-07-15 12:26:10,323 INFO Generating SQL for input: get the details of sites whose site status is on air
+2025-07-15 12:26:11,556 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:26:11,556 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'On Air'
+2025-07-15 12:26:15,044 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:47:52,455 INFO Classifying intent for user input: get the details of cancelled sites
+2025-07-15 12:47:53,282 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:47:53,282 INFO Intent classified as: sql_query
+2025-07-15 12:47:53,282 INFO Generating SQL for input: get the details of cancelled sites
+2025-07-15 12:47:54,496 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:47:54,512 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'Site returned to operator' 
+AND TRANSACTION_STATUS = 'Canceled';
+2025-07-15 12:48:39,512 INFO Classifying intent for user input: get the details of cancelled sites
+2025-07-15 12:48:40,485 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:48:40,485 INFO Intent classified as: sql_query
+2025-07-15 12:48:40,485 INFO Generating SQL for input: get the details of cancelled sites
+2025-07-15 12:48:42,378 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:48:42,394 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'Site returned to operator' 
+AND STATUS = 'Canceled';
+2025-07-15 12:49:13,641 INFO Classifying intent for user input: I want to see the Sites name  and site staus whose tenancy_id is '12021604'  
+2025-07-15 12:49:14,451 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:49:14,451 INFO Intent classified as: sql_query
+2025-07-15 12:49:14,451 INFO Generating SQL for input: I want to see the Sites name  and site staus whose tenancy_id is '12021604'  
+2025-07-15 12:49:16,721 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:49:16,721 INFO Generated SQL: SELECT DISTINCT d.SITE_NAME, d.SITE_STATUS
+FROM TXN_SITE_DETAILS d
+JOIN TXN_SITE_INVOICE_DETAILS i ON d.SITERRA_SITE_ID = i.SITERRA_SITE_ID AND d.COUNTRY_ID = i.COUNTRY_ID
+WHERE i.SITERRA_TENANCY_ID = '12021604';
+2025-07-15 12:49:18,373 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:50:02,442 INFO Classifying intent for user input: I want to see the Sites name  and site staus whose tenancy_id is '12021604'  
+2025-07-15 12:50:03,288 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:50:03,288 INFO Intent classified as: sql_query
+2025-07-15 12:50:03,288 INFO Generating SQL for input: I want to see the Sites name  and site staus whose tenancy_id is '12021604'  
+2025-07-15 12:50:04,807 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:50:04,807 INFO Generated SQL: SELECT DISTINCT tsd.SITE_NAME, tsd.SITE_STATUS
+FROM TXN_SITE_DETAILS tsd
+JOIN TXN_SITE_INVOICE_DETAILS tsid ON tsd.SITERRA_SITE_ID = tsid.SITERRA_SITE_ID
+WHERE tsid.SITERRA_TENANCY_ID = '12021604';
+2025-07-15 12:50:06,752 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:50:26,181 INFO Classifying intent for user input: show the count of airtel customer invoice of  Feb-25 from main table
+2025-07-15 12:50:26,804 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:50:26,806 INFO Intent classified as: sql_query
+2025-07-15 12:50:26,806 INFO Generating SQL for input: show the count of airtel customer invoice of  Feb-25 from main table
+2025-07-15 12:50:29,831 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:50:29,832 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE CUSTOMER_NAME = 'Airtel' 
+AND TO_CHAR(INVOICE_START_DATE, 'Mon-YY') = 'Feb-25';
+2025-07-15 12:50:32,141 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:51:58,319 INFO Classifying intent for user input: show the count of airtel malawi customer invoice of  Feb-25 from main table
+2025-07-15 12:51:59,037 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:51:59,038 INFO Intent classified as: sql_query
+2025-07-15 12:51:59,038 INFO Generating SQL for input: show the count of airtel malawi customer invoice of  Feb-25 from main table
+2025-07-15 12:52:00,681 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:52:00,684 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE CUSTOMER_NAME = 'Airtel Malawi' 
+AND TO_CHAR(SEARCH_MONTH, 'Mon-YY') = 'Feb-25';
+2025-07-15 12:52:03,531 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:52:07,997 INFO Classifying intent for user input: show the count of airtel malawi customer invoice from main table
+2025-07-15 12:52:08,595 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:52:08,595 INFO Intent classified as: sql_query
+2025-07-15 12:52:08,595 INFO Generating SQL for input: show the count of airtel malawi customer invoice from main table
+2025-07-15 12:52:09,659 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:52:09,659 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE CUSTOMER_NAME = 'Airtel Malawi';
+2025-07-15 12:52:13,785 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:54:40,902 INFO Classifying intent for user input: show the count of airtel malawi customer invoice from main table
+2025-07-15 12:54:43,803 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:54:43,810 INFO Intent classified as: sql_query
+2025-07-15 12:54:43,810 INFO Generating SQL for input: show the count of airtel malawi customer invoice from main table
+2025-07-15 12:54:44,651 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:54:44,651 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE CUSTOMER_NAME = 'AIRTEL MALAWI';
+2025-07-15 12:54:47,650 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:55:27,546 INFO Classifying intent for user input: show the count of  myn customer invoice from main table
+2025-07-15 12:55:28,593 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:55:28,593 INFO Intent classified as: sql_query
+2025-07-15 12:55:28,593 INFO Generating SQL for input: show the count of  myn customer invoice from main table
+2025-07-15 12:55:29,439 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:55:29,439 INFO Generated SQL: SELECT COUNT(*) 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE CUSTOMER_NAME = 'MTN CB';
+2025-07-15 12:55:31,977 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:56:03,920 INFO Classifying intent for user input: show the count of  invoice customer wise
+2025-07-15 12:56:04,690 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:56:04,692 INFO Intent classified as: sql_query
+2025-07-15 12:56:04,692 INFO Generating SQL for input: show the count of  invoice customer wise
+2025-07-15 12:56:05,718 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:56:05,734 INFO Generated SQL: SELECT CUSTOMER_NAME, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY CUSTOMER_NAME;
+2025-07-15 12:56:07,569 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:56:58,928 INFO Classifying intent for user input: show the count of  invoice customer wise and searh month
+2025-07-15 12:56:59,936 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:56:59,936 INFO Intent classified as: sql_query
+2025-07-15 12:56:59,936 INFO Generating SQL for input: show the count of  invoice customer wise and searh month
+2025-07-15 12:57:00,937 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:57:00,937 INFO Generated SQL: SELECT CUSTOMER_NAME, SEARCH_MONTH, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY CUSTOMER_NAME, SEARCH_MONTH;
+2025-07-15 12:57:02,795 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:57:33,013 INFO Classifying intent for user input: show the count of  invoice customer wise and searh month wise
+2025-07-15 12:57:33,637 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:57:33,638 INFO Intent classified as: sql_query
+2025-07-15 12:57:33,638 INFO Generating SQL for input: show the count of  invoice customer wise and searh month wise
+2025-07-15 12:57:35,144 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 12:57:35,144 INFO Generated SQL: SELECT CUSTOMER_NAME, SEARCH_MONTH, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY CUSTOMER_NAME, SEARCH_MONTH;
+2025-07-15 12:57:37,210 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:01:22,968 INFO Classifying intent for user input: i want to see count of active and canceled sites of tenancy data
+2025-07-15 13:01:23,649 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:01:23,649 INFO Intent classified as: sql_query
+2025-07-15 13:01:23,649 INFO Generating SQL for input: i want to see count of active and canceled sites of tenancy data
+2025-07-15 13:01:24,738 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:01:24,738 INFO Generated SQL: SELECT 
+    LEASESTATUS, 
+    COUNT(*) AS site_count 
+FROM 
+    TXN_TENANCY_DETAILS 
+WHERE 
+    LEASESTATUS IN ('Active', 'Canceled') 
+GROUP BY 
+    LEASESTATUS;
+2025-07-15 13:01:26,859 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:05,463 INFO Classifying intent for user input: i want to see lease status wise count of a invoice.
+2025-07-15 13:02:06,091 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:06,107 INFO Intent classified as: sql_query
+2025-07-15 13:02:06,107 INFO Generating SQL for input: i want to see lease status wise count of a invoice.
+2025-07-15 13:02:06,475 INFO Classifying intent for user input: i want to see lease status wise count of a invoice.
+2025-07-15 13:02:06,986 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:06,986 INFO Generated SQL: SELECT LEASESTATUS, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY LEASESTATUS;
+2025-07-15 13:02:07,091 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:07,091 INFO Intent classified as: sql_query
+2025-07-15 13:02:07,091 INFO Generating SQL for input: i want to see lease status wise count of a invoice.
+2025-07-15 13:02:07,923 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:07,923 INFO Generated SQL: SELECT LEASESTATUS, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY LEASESTATUS;
+2025-07-15 13:02:09,768 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:56,712 INFO Classifying intent for user input: i want to see base lease data of greater than 20 apr-25
+2025-07-15 13:02:57,442 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:57,442 INFO Intent classified as: sql_query
+2025-07-15 13:02:57,442 INFO Generating SQL for input: i want to see base lease data of greater than 20 apr-25
+2025-07-15 13:02:58,392 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:02:58,392 INFO Generated SQL: SELECT *
+FROM TXN_BASE_LEASE_RATE
+WHERE LEASESTART_DATE > TO_DATE('2025-04-20', 'YYYY-MM-DD')
+2025-07-15 13:03:26,619 INFO Classifying intent for user input: i want to see base lease data of search month greater than 20 apr-25
+2025-07-15 13:03:27,301 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:03:27,303 INFO Intent classified as: sql_query
+2025-07-15 13:03:27,303 INFO Generating SQL for input: i want to see base lease data of search month greater than 20 apr-25
+2025-07-15 13:03:28,364 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:03:28,365 INFO Generated SQL: SELECT * 
+FROM TXN_BASE_LEASE_RATE 
+WHERE TO_DATE(SEARCH_MONTH, 'DD-MON-YY') > TO_DATE('20-APR-25', 'DD-MON-YY')
+2025-07-15 13:03:34,716 INFO Classifying intent for user input: i want to see base lease data of search month greater than apr-25
+2025-07-15 13:03:35,363 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:03:35,363 INFO Intent classified as: sql_query
+2025-07-15 13:03:35,363 INFO Generating SQL for input: i want to see base lease data of search month greater than apr-25
+2025-07-15 13:03:36,237 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:03:36,239 INFO Generated SQL: SELECT * 
+FROM TXN_BASE_LEASE_RATE 
+WHERE TO_DATE(SEARCH_MONTH, 'Mon-YY') > TO_DATE('Apr-25', 'Mon-YY')
+2025-07-15 13:04:13,304 INFO Classifying intent for user input: i want to see base lease data of search month greater than jan-25
+2025-07-15 13:04:14,016 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:04:14,016 INFO Intent classified as: sql_query
+2025-07-15 13:04:14,016 INFO Generating SQL for input: i want to see base lease data of search month greater than jan-25
+2025-07-15 13:04:15,716 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:04:15,716 INFO Generated SQL: SELECT * 
+FROM TXN_BASE_LEASE_RATE 
+WHERE TO_DATE(SEARCH_MONTH, 'Mon-YY') > TO_DATE('Jan-25', 'Mon-YY')
+2025-07-15 13:04:20,038 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:04:59,292 INFO Classifying intent for user input: show amendment_item hello and bye
+2025-07-15 13:05:00,069 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:05:00,069 INFO Intent classified as: sql_query
+2025-07-15 13:05:00,069 INFO Generating SQL for input: show amendment_item hello and bye
+2025-07-15 13:05:01,398 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:05:01,398 INFO Generated SQL: SELECT AMENDMENT_ITEM 
+FROM TXN_AMD_PRICING 
+WHERE AMENDMENT_ITEM IN ('hello', 'bye')
+2025-07-15 13:06:04,283 INFO Classifying intent for user input: i want to see count of active and canceled sites of tenancy data
+2025-07-15 13:06:05,026 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:06:05,026 INFO Intent classified as: sql_query
+2025-07-15 13:06:05,026 INFO Generating SQL for input: i want to see count of active and canceled sites of tenancy data
+2025-07-15 13:06:06,061 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:06:06,062 INFO Generated SQL: SELECT 
+    LEASESTATUS, 
+    COUNT(*) AS site_count
+FROM 
+    TXN_TENANCY_DETAILS
+WHERE 
+    LEASESTATUS IN ('Active', 'Canceled')
+GROUP BY 
+    LEASESTATUS;
+2025-07-15 13:06:07,449 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:06:36,740 INFO Classifying intent for user input: could you show unique sites from site details table
+2025-07-15 13:06:37,383 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:06:37,385 INFO Intent classified as: sql_query
+2025-07-15 13:06:37,385 INFO Generating SQL for input: could you show unique sites from site details table
+2025-07-15 13:06:38,060 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:06:38,062 INFO Generated SQL: SELECT DISTINCT SITERRA_SITE_ID FROM TXN_SITE_DETAILS
+2025-07-15 13:06:39,756 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:07:09,846 INFO Classifying intent for user input: how many unique sites are there in site data
+2025-07-15 13:07:10,522 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:07:10,522 INFO Intent classified as: sql_query
+2025-07-15 13:07:10,522 INFO Generating SQL for input: how many unique sites are there in site data
+2025-07-15 13:07:11,840 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:07:11,840 INFO Generated SQL: SELECT COUNT(DISTINCT SITERRA_SITE_ID) FROM TXN_SITE_DETAILS;
+2025-07-15 13:07:13,398 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:07:41,500 INFO Classifying intent for user input: Get the details of distinct sites
+2025-07-15 13:07:42,587 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:07:42,588 INFO Intent classified as: sql_query
+2025-07-15 13:07:42,588 INFO Generating SQL for input: Get the details of distinct sites
+2025-07-15 13:07:43,856 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 13:07:43,856 INFO Generated SQL: SELECT DISTINCT SITE_NAME, SITE_TYPE, REGION_NAME, SITE_STATUS
+FROM TXN_SITE_DETAILS;
+2025-07-15 13:07:45,615 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 14:16:22,108 INFO Classifying intent for user input: delete feb-25 invoice
+2025-07-15 14:16:22,937 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 14:16:22,937 INFO Intent classified as: sql_query
+2025-07-15 14:16:22,937 INFO Generating SQL for input: delete feb-25 invoice
+2025-07-15 14:16:24,455 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 14:16:24,471 INFO Generated SQL: SELECT * FROM TXN_SITE_INVOICE_DETAILS WHERE invoice_id = 'feb-25';
+2025-07-15 14:38:00,487 INFO Classifying intent for user input: show invoices id  with there total records
+2025-07-15 14:38:01,513 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 14:38:01,513 INFO Intent classified as: sql_query
+2025-07-15 14:38:01,513 INFO Generating SQL for input: show invoices id  with there total records
+2025-07-15 14:38:03,710 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-15 14:38:03,710 INFO Generated SQL: SELECT invoice_id, COUNT(*) AS total_records
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY invoice_id;
+2025-07-15 14:38:06,207 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:54:07,416 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:08,377 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:45,214 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:46,164 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:46,643 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:47,509 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:48,163 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:48,564 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:49,001 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:49,739 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:50,790 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:54:51,412 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:55:32,169 INFO Classifying intent for user input: get the details of sites whose site status is on air
+2025-07-16 16:55:32,818 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:55:32,834 INFO Intent classified as: sql_query
+2025-07-16 16:55:32,834 INFO Generating SQL for input: get the details of sites whose site status is on air
+2025-07-16 16:55:33,360 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:55:34,159 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:55:34,159 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_DETAILS 
+WHERE SITE_STATUS = 'On Air'
+2025-07-16 16:55:38,279 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:56:14,349 INFO Classifying intent for user input: get the details of invoices  whose site status is on air
+2025-07-16 16:56:15,021 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:56:15,021 INFO Intent classified as: sql_query
+2025-07-16 16:56:15,021 INFO Generating SQL for input: get the details of invoices  whose site status is on air
+2025-07-16 16:56:15,571 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:56:16,416 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:56:16,416 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE SITE_STATUS = 'On Air'
+2025-07-16 16:56:22,802 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:56:32,863 ERROR Task exception was never retrieved
+future: <Task finished name='Task-132' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-07-16 16:56:32,910 ERROR Task exception was never retrieved
+future: <Task finished name='Task-135' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-07-16 16:56:32,910 ERROR Task exception was never retrieved
+future: <Task finished name='Task-136' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-07-16 16:56:32,910 ERROR Task exception was never retrieved
+future: <Task finished name='Task-137' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-07-16 16:56:32,910 ERROR Task exception was never retrieved
+future: <Task finished name='Task-138' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-07-16 16:56:32,910 ERROR Task exception was never retrieved
+future: <Task finished name='Task-139' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kirti.upadhyay\Documents\python\Gembot\venv\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-07-16 16:59:46,814 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:47,244 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:47,738 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:48,149 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:48,526 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:49,246 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:49,948 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:50,380 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:50,738 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:51,147 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:51,733 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:52,474 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:55,288 INFO Classifying intent for user input: get the details of invoices  whose site status is on air
+2025-07-16 16:59:55,947 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:59:55,947 INFO Intent classified as: sql_query
+2025-07-16 16:59:55,947 INFO Generating SQL for input: get the details of invoices  whose site status is on air
+2025-07-16 16:59:56,626 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 16:59:57,577 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 16:59:57,577 INFO Generated SQL: SELECT * 
+FROM TXN_SITE_INVOICE_DETAILS 
+WHERE SITE_STATUS = 'On Air';
+2025-07-16 17:00:04,294 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 17:06:13,490 INFO Classifying intent for user input: show the count of  invoice customer wise
+2025-07-16 17:06:18,569 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 17:06:18,580 INFO Intent classified as: sql_query
+2025-07-16 17:06:18,580 INFO Generating SQL for input: show the count of  invoice customer wise
+2025-07-16 17:06:19,062 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-16 17:06:19,979 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 17:06:19,979 INFO Generated SQL: SELECT CUSTOMER_NAME, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY CUSTOMER_NAME;
+2025-07-16 17:06:22,302 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 17:10:32,259 INFO Classifying intent for user input: Which invoice statuses are considered invalid?
+2025-07-16 17:10:32,903 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 17:10:32,903 INFO Intent classified as: question
+2025-07-17 16:22:18,716 INFO Classifying intent for user input: Could you show unique sap customer numbers
+2025-07-17 16:22:19,705 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:22:19,721 INFO Intent classified as: sql_query
+2025-07-17 16:22:19,721 INFO Generating SQL for input: Could you show unique sap customer numbers
+2025-07-17 16:22:20,901 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:22:21,770 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:22:21,797 INFO Generated SQL: SELECT DISTINCT SAP_CUSTOMER_NO FROM TXN_AMD_QUANTITY
+2025-07-17 16:22:26,056 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:22:42,722 INFO Classifying intent for user input: Could you show unique sap customer numbers from invoices table
+2025-07-17 16:22:43,579 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:22:43,581 INFO Intent classified as: sql_query
+2025-07-17 16:22:43,582 INFO Generating SQL for input: Could you show unique sap customer numbers from invoices table
+2025-07-17 16:22:45,549 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:22:46,610 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:22:46,617 INFO Generated SQL: SELECT DISTINCT SAP_CUSTOMER_NO FROM TXN_SITE_INVOICE_DETAILS;
+2025-07-17 16:22:50,201 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:55:51,995 INFO Classifying intent for user input: hi
+2025-07-17 16:55:53,228 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:55:53,235 INFO Intent classified as: greeting
+2025-07-17 16:56:40,359 INFO Classifying intent for user input: i want to show the count of invoice with their month
+2025-07-17 16:56:41,475 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:56:41,478 INFO Intent classified as: sql_query
+2025-07-17 16:56:41,478 INFO Generating SQL for input: i want to show the count of invoice with their month
+2025-07-17 16:56:42,075 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:56:43,349 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:56:43,361 INFO Generated SQL: SELECT search_month, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY search_month;
+2025-07-17 16:56:46,450 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:57:37,534 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:37,966 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:38,429 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:39,034 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:39,490 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:39,954 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:40,751 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:41,121 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:42,120 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:42,661 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:43,664 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:44,293 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:47,157 INFO Classifying intent for user input: i want to show the count of invoice with their month
+2025-07-17 16:57:48,549 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:57:48,552 INFO Intent classified as: sql_query
+2025-07-17 16:57:48,552 INFO Generating SQL for input: i want to show the count of invoice with their month
+2025-07-17 16:57:49,025 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:57:50,484 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:57:50,485 INFO Generated SQL: SELECT search_month, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY search_month;
+2025-07-17 16:57:53,252 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:58:43,939 INFO Classifying intent for user input: i want to show the count of invoice with their month in pie chart 
+2025-07-17 16:58:44,719 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:58:44,720 INFO Intent classified as: sql_query
+2025-07-17 16:58:44,721 INFO Generating SQL for input: i want to show the count of invoice with their month in pie chart 
+2025-07-17 16:58:45,230 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:58:46,632 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:58:46,634 INFO Generated SQL: SELECT TO_CHAR(invoice_start_date, 'YYYY-MM') AS invoice_month, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY TO_CHAR(invoice_start_date, 'YYYY-MM')
+2025-07-17 16:58:49,992 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:59:08,158 INFO Classifying intent for user input: i want to show the count of invoice with their month in line chart
+2025-07-17 16:59:08,970 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:59:08,976 INFO Intent classified as: sql_query
+2025-07-17 16:59:08,976 INFO Generating SQL for input: i want to show the count of invoice with their month in line chart
+2025-07-17 16:59:09,614 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:59:11,122 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:59:11,129 INFO Generated SQL: SELECT TO_CHAR(invoice_start_date, 'YYYY-MM') AS invoice_month, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY TO_CHAR(invoice_start_date, 'YYYY-MM')
+ORDER BY invoice_month;
+2025-07-17 16:59:14,364 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:59:28,103 INFO Classifying intent for user input: i want to show the count of invoice with their month in bar chart
+2025-07-17 16:59:28,935 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:59:28,936 INFO Intent classified as: sql_query
+2025-07-17 16:59:28,937 INFO Generating SQL for input: i want to show the count of invoice with their month in bar chart
+2025-07-17 16:59:29,553 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-17 16:59:30,664 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 16:59:30,666 INFO Generated SQL: SELECT search_month, COUNT(invoice_id) AS invoice_count
+FROM TXN_SITE_INVOICE_DETAILS
+GROUP BY search_month;
+2025-07-17 16:59:34,318 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 10:43:48,609 INFO Classifying intent for user input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-21 10:43:54,421 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 10:43:54,421 INFO Intent classified as: sql_query
+2025-07-21 10:43:54,421 INFO Generating SQL for input: i want to compare two consecutive month invoice on the basis of their count
+2025-07-21 10:43:55,265 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 10:43:57,171 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 10:43:57,174 INFO Generated SQL: SELECT 
+    a.search_month AS current_month, 
+    COUNT(a.invoice_id) AS current_month_count, 
+    b.search_month AS previous_month, 
+    COUNT(b.invoice_id) AS previous_month_count
+FROM 
+    TXN_SITE_INVOICE_DETAILS a
+LEFT JOIN 
+    TXN_SITE_INVOICE_DETAILS b 
+ON 
+    a.siterra_site_id = b.siterra_site_id 
+    AND a.country_id = b.country_id 
+    AND a.search_month = b.search_month + 1
+GROUP BY 
+    a.search_month, b.search_month;
+2025-07-21 12:30:10,850 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:11,467 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:12,024 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:12,596 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:13,110 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:13,646 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:14,117 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:14,747 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:15,407 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:15,865 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:16,288 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-21 12:30:16,780 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"

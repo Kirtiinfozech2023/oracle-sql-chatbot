@@ -1,0 +1,14 @@
+
+
+
+streamlit
+openai
+oracledb
+pandas
+matplotlib
+plotly
+faiss-cpu
+tqdm
+python-dotenv
+
+
